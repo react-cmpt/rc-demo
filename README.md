@@ -1,6 +1,6 @@
 # rc-demo
 
-React compoment project demo
+React component project demo
 
 ## step
 
@@ -12,6 +12,9 @@ yarn example
 
 # build
 yarn build
+
+# test
+yarn test
 ```
 
 ## workflow
