@@ -1,6 +1,6 @@
 {
   "name": "rc-demo",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "react compoment project demo",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
