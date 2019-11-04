@@ -8,9 +8,19 @@
     "example": "parcel ./example/index.html",
     "build": "rm -rf ./lib/ && tsc -d --project tsconfig.json --outDir ./lib/",
     "size": "size-limit",
-    "test": "jest -c jest.json && yarn size"
+    "test": "jest -c jest.json && yarn size",
+    "prepare": "yarn build"
   },
-  "author": "wangcch",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/react-cmpt/rc-demo.git"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "template"
+  ],
+  "author": "wangcch <wangcch.cc@gmail.com>",
   "license": "MIT",
   "dependencies": {},
   "peerDependencies": {
