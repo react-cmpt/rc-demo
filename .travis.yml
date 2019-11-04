@@ -4,3 +4,6 @@ sudo: false
 
 node_js:
   - "10"
+
+before_script:
+  - "yarn build"
