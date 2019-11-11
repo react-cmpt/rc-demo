@@ -6,6 +6,8 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "example": "parcel ./example/index.html",
+    "example:build": "rm -rf ./dist/ && parcel build ./example/index.html --out-dir dist --public-url ./",
+    "example:deploy": "yarn example:build && gh-pages -d dist",
     "build": "rm -rf ./lib/ && tsc -d --project tsconfig.json --outDir ./lib/",
     "size": "size-limit",
     "test": "jest -c jest.json && yarn size",
@@ -37,6 +39,7 @@
     "emotion": "^10.0.23",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
+    "gh-pages": "^2.1.1",
     "jest": "^24.9.0",
     "parcel-bundler": "^1.12.4",
     "react": "^16.8.0",
