@@ -4,11 +4,15 @@
   "description": "react compoment project demo",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "module": "esm/index.js",
+  "sideEffects": false,
   "scripts": {
     "example": "parcel serve ./example/index.html",
     "example:build": "rm -rf ./dist/example && parcel build ./example/index.html --target example",
     "example:deploy": "yarn example:build && gh-pages -d ./dist/example",
-    "build": "rm -rf ./lib/ && tsc -d --project tsconfig.json --outDir ./lib/",
+    "build": "rm -rf ./lib/* ./esm/* && yarn build:cjs && yarn build:es",
+    "build:cjs": "tsc",
+    "build:es": "tsc -m ESNext --outDir ./esm",
     "test": "jest -c jest.json",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
     "prettier": "prettier --write './src/**/*.{ts,tsx}' --config ./.prettierrc",
@@ -25,6 +29,10 @@
   ],
   "author": "wangcch <wangcch.cc@gmail.com>",
   "license": "MIT",
+  "files": [
+    "esm",
+    "lib"
+  ],
   "dependencies": {},
   "peerDependencies": {
     "react": "^16.8.0",

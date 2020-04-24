@@ -6,6 +6,7 @@
 
 /dist
 /lib
+/esm
 /tests
 
 npm-debug.log*
