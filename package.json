@@ -1,13 +1,13 @@
 {
   "name": "rc-demo",
-  "version": "0.1.2",
+  "version": "0.2.0-alpha.0",
   "description": "react compoment project demo",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "example": "parcel ./example/index.html",
-    "example:build": "rm -rf ./dist/ && parcel build ./example/index.html --out-dir dist --public-url ./",
-    "example:deploy": "yarn example:build && gh-pages -d dist",
+    "example": "parcel serve ./example/index.html",
+    "example:build": "rm -rf ./dist/example && parcel build ./example/index.html --target example",
+    "example:deploy": "yarn example:build && gh-pages -d ./dist/example",
     "build": "rm -rf ./lib/ && tsc -d --project tsconfig.json --outDir ./lib/",
     "test": "jest -c jest.json",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
@@ -48,13 +48,13 @@
     "eslint-plugin-react-hooks": "^3.0.0",
     "gh-pages": "^2.1.1",
     "husky": "^4.2.3",
-    "jest": "^25.2.7",
+    "jest": "^25.4.0",
     "lint-staged": "^10.1.0",
-    "parcel-bundler": "^1.12.4",
+    "parcel": "^2.0.0-alpha.3.2",
     "prettier": "^1.19.1",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
-    "ts-jest": "^25.3.1",
+    "ts-jest": "^25.4.0",
     "typescript": "^3.8.3"
   },
   "husky": {
@@ -67,5 +67,12 @@
       "eslint --fix",
       "git add"
     ]
+  },
+  "targets": {
+    "example": {
+      "context": "browser",
+      "publicUrl": "./",
+      "isLibrary": false
+    }
   }
 }
