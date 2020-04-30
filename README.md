@@ -13,6 +13,12 @@ yarn example
 # build
 yarn build
 
+# lint
+yarn lint
+
+# format
+yarn prettier
+
 # test
 yarn test
 ```
