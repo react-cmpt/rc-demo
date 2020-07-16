@@ -14,8 +14,8 @@
     "build:cjs": "tsc",
     "build:es": "tsc -m ESNext --outDir ./esm",
     "test": "jest -c jest.json",
-    "lint": "eslint 'src/**/*.{ts,tsx}'",
-    "prettier": "prettier --write './src/**/*.{ts,tsx}' --config ./.prettierrc",
+    "lint": "eslint src",
+    "prettier": "prettier --write src --config ./.prettierrc",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
     "prepare": "yarn build"
   },
